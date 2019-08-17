@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
         erb :index
     end
 
+    get '/home' do 
+        authenticate
+        erb :home
+    end
+
     helpers do
 
         def logged_in?
