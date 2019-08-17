@@ -1,6 +1,6 @@
 require_relative "./config/env.rb"
 
 use Rack::MethodOverride
-use SessionController
+use SessionsController
 run ApplicationController
 
