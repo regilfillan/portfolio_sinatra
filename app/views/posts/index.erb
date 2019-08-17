@@ -1,1 +1,3 @@
-This is where the posts will be (homepage).
+<% @posts.each do |post| %>
+    <%= erb :'posts/_post', locals: {user: post.user, post: post}%>
+<% end %>
