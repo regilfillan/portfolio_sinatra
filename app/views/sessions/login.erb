@@ -7,5 +7,7 @@
     <input id="password" type="password" name="password">
     <br/>
     <input type="submit" value="Log In">
-
+    <% if @failed %>
+        <p class "danger">Your username or password are incorrect.</p>
+    <% end %>
 </form>
