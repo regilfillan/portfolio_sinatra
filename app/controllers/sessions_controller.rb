@@ -22,10 +22,10 @@ class SessionsController < ApplicationController
         erb :'sessions/signup'
     end
 
-    post "/signup" do
-        user= User.create(name: params[:name], username: params[:username], password: params[:password])
-        if user.errors.any?
-
+    post "/users" do
+        @user= User.create(name: params[:name], username: params[:username], password: params[:password])
+        if @user.errors.any?
+            erb :'sessions/signup'
         else
             session[:user_id]= user.id
             redirect '/home'
