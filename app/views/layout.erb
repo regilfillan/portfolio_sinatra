@@ -10,7 +10,13 @@
 <body>
     <h1>Your Next Trip</h1>
     <% if logged_in? %>
-        <p><a href= "/home">Home</a></p>
+        <p><a href= "/home">Home</a></p><br/>
+            <a href= "/posts">Posts</a><br/>
+            <form action="/logout" method= "POST" class="logout">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value='Log Out'>
+            </form>
+        </p>
     <% end %>
     <%= yield %>
 </body>

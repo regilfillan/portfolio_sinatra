@@ -27,8 +27,14 @@ class SessionsController < ApplicationController
         if @user.errors.any?
             erb :'sessions/signup'
         else
-            session[:user_id]= user.id
+            session[:user_id]= @user.id
             redirect '/home'
+        end
+    end
+
+    delete '/logout' do 
+        session.clear
+        redirect '/login'
     end
 
 end
