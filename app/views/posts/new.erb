@@ -1,0 +1,37 @@
+<form action= "/posts" method= "POST">
+    <div>
+        <label for= "location">Where is your next trip?</label>
+        <input type= "text" name= "location" id= "location" placeholder= "Location" required= "required">
+    </div>
+    <div>
+        <label for= "days">How long is your trip (in days)?</label>
+        <input type= "text" name= "days" id= "days" placeholder= "XX Days" required= "required">
+    </div>
+    <div>
+        <label for= "budget">What is your daily budget?</label>
+        <input type= "text" name= "budget" id= "budget" placeholder= "YYY/day">
+    </div>
+    <div>
+        <label for= "transport">Have you booked transportation?</label>
+        <input type= "checkbox" name= "transport" id= "transport" value= "has_transport">
+    </div>
+    <div>
+        <label for= "accommodation">Have you booked accommodation?</label>
+        <input type= "checkbox" name= "accommodation" id= "accommodation" value= "has_accommodation">
+    </div>
+    <div>
+        <label for= "recs">Are you looking for recommendations (check if yes)?</label>
+        <input type= "checkbox" name= "recs" id= "recs" value="wants_recs">
+    </div>
+    <div>
+        <label for= "reciwant">For what would you like recommendations?</label>
+        <input type= "text" name= "reciwant" id= "reciwant" placeholder= "I would love restaurant recs please!">
+    </div>
+    <div>
+        <label for= "contact">How can we contact you with recs?</label>
+        <input type= "text" name= "contact" id= "contact" placeholder= "user@email.com" required= "required">
+    </div>
+    <div>
+        <input type="submit" value="Submit Post">
+    </div>
+</form>
