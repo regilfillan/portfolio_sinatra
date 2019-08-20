@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         @user= User.create(name: params[:name], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
         if @user.errors.any?
             erb :'sessions/signup'
-        else
+        else 
             session[:user_id]= @user.id
             redirect '/home'
         end
@@ -38,7 +38,7 @@ class SessionsController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:name, :email, :pass)
+        params.require(:user).permit(:name, :username, :password, :password_confirmation)
     end
 
 end
