@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     end
 
     post "/users" do
-        @user= User.create(name: params[:name], username: params[:username], password: params[:password])
+        @user= User.create(name: params[:name], username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
         if @user.errors.any?
             erb :'sessions/signup'
         else
@@ -35,6 +35,10 @@ class SessionsController < ApplicationController
     delete '/logout' do 
         session.clear
         redirect '/login'
+    end
+
+    def user_params
+        params.require(:user).permit(:name, :email, :pass)
     end
 
 end
