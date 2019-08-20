@@ -10,8 +10,9 @@
 <body>
     <h1>Your Next Trip</h1>
     <% if logged_in? %>
-        <p><a href= "/home">Home</a></p><br/>
-            <a href= "/posts">Posts</a><br/>
+        <p><a href= "/home">My Trips</a></p><br/>
+            <a href= "/posts">All Trips</a><br/>
+            
             <form action="/logout" method= "POST" class="logout">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value='Log Out'>
