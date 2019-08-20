@@ -6,4 +6,9 @@ class PostsController < ApplicationController
         erb :'posts/index'
     end
 
+    get "/posts/new" do 
+        authenticate
+        erb :"/posts/new"
+    end
+
 end
