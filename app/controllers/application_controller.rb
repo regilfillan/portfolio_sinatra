@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
 
     get '/home' do 
         authenticate
+        @posts = Post.all
         erb :home
     end
 

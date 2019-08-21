@@ -1,2 +1,8 @@
 <h2> <%=current_user.name%>'s Trip List</h2>
 <a href='/posts/new'>Make New Post</a>
+
+<% @posts.each do |post| %>
+    <% if post.user == current_user %>
+        <%= erb :'posts/_post', locals: {user: post.user, post: post}%>
+    <% end %>
+<% end %>
