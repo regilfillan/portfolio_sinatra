@@ -24,11 +24,18 @@ class PostsController < ApplicationController
     end
 
     delete "/posts/:id" do
+        authenticate
         p= Post.find_by(id: params[:id])
         if p 
             p.destroy
             redirect "/posts"
         end
+    end
+
+    get "/posts/:id/edit" do 
+        authenticate
+        @post = Post.find_by(:id params[:id])
+        if 
     end
 
 end
