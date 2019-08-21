@@ -8,7 +8,11 @@ class PostsController < ApplicationController
 
     get "/posts/new" do 
         authenticate
-        erb :"/posts/new"
+        erb :'/posts/new'
+    end
+
+    post "/posts" do
+        
     end
 
 end
