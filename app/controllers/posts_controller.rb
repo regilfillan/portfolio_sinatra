@@ -14,8 +14,8 @@ class PostsController < ApplicationController
     post "/posts" do
         authenticate
         u= current_user
-        u.posts.build(location: params[:location], days: params[:days], budget: params[:budget], transport: params[:transport], accommodation: params[:accommodation])
-        if u.save
+        p= u.posts.build(location: params[:location], days: params[:days], budget: params[:budget], transport: params[:transport], accommodation: params[:accommodation])
+        if p.save
             redirect "/posts"
         else
             @message= "There was an issue submitting your post."

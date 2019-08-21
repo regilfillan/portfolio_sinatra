@@ -1,12 +1,11 @@
 <% if !!@message %>
-    <p class= "danger">There was an issues submitting your post.</p>
+    <p class= "danger">There was an issue submitting your post.</p>
 <% end %>
 
 <form action= "/posts" method= "POST">
     <div>
         <label for= "location">Where is your next trip?</label>
-        </br>
-        <textarea name= "location" id= "location" placeholder= "Location" required= "required" rows="4" cols="50"></textarea>
+        <input type= "text" name= "location" id= "location" placeholder= "Location" required= "required">
     </div>
     <div>
         <label for= "days">How long is your trip (in days)?</label>
@@ -14,15 +13,15 @@
     </div>
     <div>
         <label for= "budget">What is your daily budget?</label>
-        <input type= "text" name= "budget" id= "budget" placeholder= "YYY/day">
+        <input type= "text" name= "budget" id= "budget" placeholder= "YYY/day" required= "required">
     </div>
     <div>
         <label for= "transport">Have you booked transportation?</label>
-        <input type= "checkbox" name= "transport" id= "transport" value= "has_transport">
+        <input type= "text" name= "transport" id= "transport" placeholder= "Yes/No" required= "required">
     </div>
     <div>
         <label for= "accommodation">Have you booked accommodation?</label>
-        <input type= "checkbox" name= "accommodation" id= "accommodation" value= "has_accommodation">
+        <input type= "text" name= "accommodation" id= "accommodation" placeholder= "Yes/No" required= "required">
     </div>
     <div>
         <input type="submit" value="Submit Post">
