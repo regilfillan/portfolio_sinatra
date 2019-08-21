@@ -26,16 +26,25 @@ class PostsController < ApplicationController
     delete "/posts/:id" do
         authenticate
         p= Post.find_by(id: params[:id])
-        if p 
-            p.destroy
-            redirect "/posts"
+        if p
+         p.destroy
+         redirect "/home"
         end
     end
 
     get "/posts/:id/edit" do 
-        authenticate
-        @post = Post.find_by(:id params[:id])
-        if 
+        @post = Post.find_by(id: params[:id])
+        authenticate_user(@post)
+        if @post
+            erb :'/posts/edit'
+        end
+    end
+
+    patch "/posts/:id" do
+        @post= Post.find_by(id: params[:id])
+        authenticate_user(@post)
+        @post.update(location: params[:location], days: params[:days], budget: params[:budget], transport: params[:transport], accommodation: params[:accommodation])
+        redirect "/home"
     end
 
 end

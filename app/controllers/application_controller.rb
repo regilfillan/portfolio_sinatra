@@ -17,6 +17,10 @@ class ApplicationController < Sinatra::Base
         erb :home
     end
 
+    get "/error" do
+        erb :error, layout: false
+    end
+
     helpers do
 
         def logged_in?
@@ -31,6 +35,12 @@ class ApplicationController < Sinatra::Base
             if !logged_in?
                 redirect '/login'
             end
+        end
+
+        def authenticate_user(post)
+            authenticate
+            redirect "/error" if !post
+            redirect "/error" if current_user != post.user
         end
 
     end
