@@ -12,7 +12,15 @@ class PostsController < ApplicationController
     end
 
     post "/posts" do
-        
+        authenticate
+        u= current_user
+        u.posts.build(location: params[:location], days: params[:days], budget: params[:budget], transport: params[:transport], accommodation: params[:accommodation])
+        if u.save
+            redirect "/posts"
+        else
+            @message= "There was an issue submitting your post."
+            erb :'/posts/new'
+        end
     end
 
 end
