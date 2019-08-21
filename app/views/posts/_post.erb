@@ -7,4 +7,12 @@
     <p>Transport: <%= post.transport %></p>
     <p>Accommodation: <%= post.accommodation %></p>
 
+    <% if post.user == current_user %>
+        <a href= "/posts/<%= post.id %>/edit">Edit</a>
+        <form action="/posts/<%= post.id %>" method= "POST">
+            <input type= "hidden" name= "_method" value= "delete">
+            <input type= "submit" value= "delete">
+        </form>
+    <% end %>
+
 </div>

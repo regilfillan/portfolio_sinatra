@@ -1,5 +1,5 @@
 <% if !!@message %>
-    <p class= "danger">There was an issue submitting your post.</p>
+    <p class= "danger"><%= @message %></p>
 <% end %>
 
 <form action= "/posts" method= "POST">
