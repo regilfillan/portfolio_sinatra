@@ -1,5 +1,6 @@
 <h2 class= "flare"> All Users' Trips</h2>
 <a href='/posts/new'>Make New Post</a>
+<p><a href= "/home">My Trips</a></p>
 
 <% @posts.each do |post| %>
     <%= erb :'posts/_post', locals: {user: post.user, post: post}%>

@@ -1,5 +1,6 @@
 <h2 class= "flare"> <%=current_user.name%>'s Trip List</h2>
 <a href='/posts/new'>Make New Post</a>
+<p><a href= "/posts">All Trips</a></p>
 
 <% @posts.each do |post| %>
     <% if post.user == current_user %>
