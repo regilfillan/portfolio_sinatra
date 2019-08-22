@@ -5,7 +5,15 @@ Your Next Trip is a simple MVC CRUD application using Sinatra and Activerecord. 
 
 ## Installation
 
-having a code block in your README that shows exactly what folks need to type into their shell to install your software
+git clone: https://github.com/regilfillan/portfolio_sinatra
+
+run bundle install
+
+run rake db:migrate
+
+run shotgun
+
+visit the shotgun-provided URL
 
 
 ## Contributing
