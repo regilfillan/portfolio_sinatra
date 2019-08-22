@@ -3,32 +3,28 @@
 <% end %>
 
 <form action= "/posts/<%= @post.id %>" method= "POST">
-    <div>
+    <div class= "post">
+    <h3 class= "flare">Edit Your Trip:</h3>
         <input type= "hidden" name="_method" value="patch">
         <label for= "location">Where is your next trip?</label>
         <input type= "text" name= "location" id= "location" placeholder= "Location" required= "required">
-    </div>
-    <div>
+        </br>
         <input type= "hidden" name="_method" value="patch">    
         <label for= "days">How long is your trip (in days)?</label>
         <input type= "text" name= "days" id= "days" placeholder= "XX Days" required= "required">
-    </div>
-    <div>
+        </br>
         <input type= "hidden" name="_method" value="patch">
         <label for= "budget">What is your daily budget?</label>
         <input type= "text" name= "budget" id= "budget" placeholder= "YYY/day" required= "required">
-    </div>
-    <div>
+        </br>
         <input type= "hidden" name="_method" value="patch">
         <label for= "transport">Have you booked transportation?</label>
         <input type= "text" name= "transport" id= "transport" placeholder= "Yes/No" required= "required">
-    </div>
-    <div>
+        </br>
         <input type= "hidden" name="_method" value="patch">
         <label for= "accommodation">Have you booked accommodation?</label>
         <input type= "text" name= "accommodation" id= "accommodation" placeholder= "Yes/No" required= "required">
-    </div>
-    <div>
+        </br>
         <input type="submit" value="Re-Submit Post">
     </div>
 </form>
