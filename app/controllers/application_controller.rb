@@ -7,6 +7,10 @@ class ApplicationController < Sinatra::Base
         set :session_secret, SESSION_SECRET
     end 
 
+    not_found do
+        404
+    end
+
     get '/' do
         erb :index
     end
