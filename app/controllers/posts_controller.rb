@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-#did not have a RESTful show because I used two different routes in different controllers to display all posts vs posts by id 
+#did not have a RESTful show ("read") because I used two different routes in different controllers to display all posts vs posts by id 
     get "/posts" do
         authenticate
         @posts = Post.all
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
         end
     end
 
-    #DELETE ACTION
+#DELETE ACTION
     delete "/posts/:id" do
         authenticate
         p= Post.find_by(id: params[:id])
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
         end
     end
 
-    #EDIT ACTION
+#EDIT ACTION
     patch "/posts/:id" do
         @post= Post.find_by(id: params[:id])
         authenticate_user(@post)
