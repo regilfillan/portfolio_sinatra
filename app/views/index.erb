@@ -1,2 +1,16 @@
-<h2>Where will Your Next Trip be?</h2>
-<h4>To Continue, Please <a href= "/login">Log In </a> or <a href= "/signup">Sign Up</a></h4>
+<h2 class= "flare">Where will Your Next Trip be?</h2>
+
+<% if !logged_in? %>
+    <h4>To Continue, Please <a href= "/login">Log In </a> or <a href= "/signup">Sign Up</a></h4>
+<% end %>
+
+<% if logged_in? %>
+    <p><a href='/posts/new'>Make New Post</a></p>
+    <p><a href= "/home">My Trips</a></p>
+    <p><a href= "/posts">All Trips</a></p>
+        <form action="/logout" method= "POST" class="logout">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value='Log Out'>
+        </form>
+    </p>
+<% end %>

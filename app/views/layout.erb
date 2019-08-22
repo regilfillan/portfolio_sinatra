@@ -9,15 +9,7 @@
 </head>
 <body>
     <h1 class= "flare">Your Next Trip</h1>
-    <% if logged_in? %>
-        <p><a href= "/home">My Trips</a></p>
-            <a href= "/posts">All Trips</a>
-            <form action="/logout" method= "POST" class="logout">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value='Log Out'>
-            </form>
-        </p>
-    <% end %>
+
     <%= yield %>
 </body>
 </html>
