@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+#did not have a RESTful show because I used two different routes in different controllers to display all posts vs posts by id 
     get "/posts" do
         authenticate
         @posts = Post.all
@@ -11,18 +12,20 @@ class PostsController < ApplicationController
         erb :'/posts/new'
     end
 
+#CREATE ACTION
     post "/posts" do
         authenticate
         u= current_user
         p= u.posts.build(location: params[:location], days: params[:days], budget: params[:budget], transport: params[:transport], accommodation: params[:accommodation])
         if p.save
-            redirect "/posts"
+            redirect "/home"
         else
             @message= "There was an issue submitting your post."
             erb :'/posts/new'
         end
     end
 
+    #DELETE ACTION
     delete "/posts/:id" do
         authenticate
         p= Post.find_by(id: params[:id])
@@ -40,6 +43,7 @@ class PostsController < ApplicationController
         end
     end
 
+    #EDIT ACTION
     patch "/posts/:id" do
         @post= Post.find_by(id: params[:id])
         authenticate_user(@post)
