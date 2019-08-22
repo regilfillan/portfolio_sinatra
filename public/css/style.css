@@ -1,5 +1,5 @@
 html{
-    background-color: whitesmoke;
+    background-color: #ffffffbd;
 }
 
 .danger{
@@ -8,8 +8,12 @@ html{
 
 .post{
     background-color: white;
-    border: 1px solid gray;
+    border: 1px solid #047c7c;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
+}
+
+.flare{
+    text-emphasis-color: hsl(271, 98%, 40%);
 }
