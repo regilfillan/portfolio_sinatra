@@ -5,7 +5,7 @@ Your Next Trip is a simple MVC CRUD application using Sinatra and Activerecord. 
 
 ## Installation
 
-
+having a code block in your README that shows exactly what folks need to type into their shell to install your software
 
 
 ## Contributing
